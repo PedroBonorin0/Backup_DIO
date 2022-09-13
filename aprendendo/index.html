@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teste com VUE</title>
+</head>
+
+<body>
+  <div id="app">
+    <h1>{{ messageCount }}</h1>
+    <button @click="count++">Incrementa</button>
+  </div>
+
+
+
+  <script src="https://unpkg.com/vue@next"></script>
+  <script>
+    const app = {
+      data(){
+        return{
+          message: 'Contador',
+          count: 0,
+        }
+      },
+      computed: {
+        messageCount(){
+          return `${this.message} - ${this.count}`;
+        }
+      },
+    }
+
+    Vue.createApp(app).mount('#app');
+  </script>
+</body>
+
+</html>
